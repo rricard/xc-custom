@@ -3,6 +3,7 @@
   roles:
 
   # osx config
+  - role: homedir
   - role: dock
     apps:
     - /Applications/Firefox.app
@@ -21,7 +22,6 @@
     - path: ~/src/github.com
     - path: ~/Downloads
       sort: datemodified
-  - role: homedir
   - role: cask_package
     package_name: asepsis
   - role: dashboard
