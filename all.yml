@@ -64,6 +64,8 @@
   - role: npm_package
     package_name: grunt
   - role: rbenv
+  - role: gem_package
+    package_name: jekyll
   - role: cask_package
     package_name: java
   - role: brew_package
