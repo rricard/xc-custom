@@ -1,0 +1,38 @@
+---
+# link correct paths in home directory
+
+- name: determine linked document location
+  command: test -L ~/Documents
+  ignore_errors: True
+  register: doc_linked
+
+- name: backup and move current documents
+  command: sudo mv ~/Documents ~/Documents.backup
+  when: doc_linked|failed
+
+- name: determine linked public location
+  command: test -L ~/Public
+  ignore_errors: True
+  register: public_linked
+
+- name: backup and move current documents
+  command: sudo mv ~/Public ~/Public.backup
+  when: public_linked|failed
+
+- name: symlink google drive
+  file: state=link src="~/Google Drive/Documents" dest="~/Documents"
+
+- name: symlink google drive public
+  file: state=link src="~/Google Drive/Public" dest="~/Public"
+
+- name: fix public permissions
+  command: chmod -R 755 ~/Public
+
+- name: fix public drop box permissions
+  command: chmod -R 722 ~/Public/Drop\ Box
+
+- name: symlink archives
+  file: state=link src="~/Dropbox/Archives" dest="~/Archives"
+
+- name: symlink dev archives
+  file: state=link src="~/Dropbox/Archives/src" dest="~/src/archives.dropbox"

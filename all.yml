@@ -18,8 +18,10 @@
     folders:
     - path: ~/
     - path: ~/Documents
+    - path: ~/src/github.com
     - path: ~/Downloads
       sort: datemodified
+  - role: homedir
   - role: cask_package
     package_name: asepsis
   - role: dashboard
