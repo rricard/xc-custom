@@ -91,6 +91,11 @@
     package_name: redis
   - role: brew_package
     package_name: elasticsearch
+  ## vms
+  - role: cask_package
+    package_name: virtualbox
+  - role: cask_package
+    package_name: vagrant
   ## deployment
   - role: brew_package
     package_name: heroku-toolbelt
