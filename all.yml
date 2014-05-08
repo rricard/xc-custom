@@ -123,6 +123,8 @@
   - role: alfred
   - role: cask_package
     package_name: istat-menus
+  - role: cask_package
+    package_name: teamviewer
 
   ## dev tools
   - role: cask_package
