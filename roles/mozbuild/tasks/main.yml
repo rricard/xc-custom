@@ -1,0 +1,5 @@
+- name: add shim to bash
+  lineinfile: dest=~/.bash_profile regexp="moz-git-tools" line="export PATH=\"$HOME/src/github.com/mozilla/moz-git-tools:$PATH\"" state=present
+
+- name: add shim to zsh
+  lineinfile: dest=~/.zshenv regexp="moz-git-tools" line="export PATH=\"$HOME/src/github.com/mozilla/moz-git-tools:$PATH\"" state=present

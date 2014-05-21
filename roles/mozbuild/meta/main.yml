@@ -15,3 +15,5 @@ dependencies:
   - role: brew_package
     tap: homebrew/versions
     package_name: autoconf213
+  - role: git_package
+    repo: github.com/mozilla/moz-git-tools
